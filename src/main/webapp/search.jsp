@@ -1,8 +1,16 @@
 <%@page import = "java.util.ArrayList"%>
 <%@page import = "com.searchEngine.SearchResult"%>
 <html>
+<head>
+<link rel = "stylesheet" type = text/css href = "styles.css" >
+</head>
 <body>
-    <table>
+<h1>My Search Engine</h1>
+<form action = "Search">
+    <input type = "text" name = "keyword"></input>
+    <button type = "Submit">Search</button>
+</form>
+    <table border = 2 class = "resultTable">
         <tr>
             <th>Title</th>
 
@@ -14,7 +22,7 @@
         %>
         <tr>
             <td><% out.println(result.getTitle()); %> </td>
-            <td><% out.println(result.getLink()); %> </td>
+            <td><a href = "<%out.println(result.getLink());%>"><% out.println(result.getLink()); %></a></td>
         </tr>
         <%
             }
